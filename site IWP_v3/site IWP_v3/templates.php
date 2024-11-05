@@ -1,0 +1,108 @@
+<?php
+session_start();
+$databasename="account";
+$database_connection=mysqli_connect("localhost" , "root" , "" , "account");
+
+if (!$database_connection) {
+	echo ("Failed connection to database: $databasename  ---  ". mysqli_connect_error() );
+}
+echo "Successfully connected to database: $databasename";
+session_regenerate_id(true);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script src="js/chatbot1.js" defer></script>
+    <script src="js/chatbot2.js" defer></script>
+
+</head>
+
+<body>
+    <nav class="navbar bg-white" id="navbar">
+        <div class="container">
+            <a href="indexin.php" class="navbar-brand">
+                <img src="images/cv-icon-1725x2048-mk536z84.png" alt="" class="navbar-brand-icon">
+                <span class="navbar-brand-text">build <span>resume.</span></span>
+            </a>
+            <ul class="navigation">
+                <li><a href="templates.php">Templates</a></li>
+                <li><a href="how.php">How to write a CV</a></li>
+                <li><a href="logoutpage.php"><?php echo $_SESSION['username'] ?></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <section class="templates py-8 bg-white" >
+        <div class="container">
+            <div class="row section-title text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-6 text-blue-dark fw-bold">Here are the Best Templates for you</h2>
+                </div>
+            </div>
+            <div class="row templates-list gy-5 gx-lg-5">
+                <div class="templates-item position-relative col-lg-4">
+                    <div class="template-item-img mx-auto me-lg-0 position-relative">
+                        <img src="images/template1.png" alt="" class="img-fluid">
+                        <a href="template1.php" class="btn btn-lg btn-primary position-absolute choose-template-btn">Select
+                            Template</a>
+                    </div>
+                </div>
+
+                <div class="templates-item position-relative col-lg-4">
+                    <div class="template-item-img mx-auto ms-lg-0 position-relative">
+                        <img src="images/template2.png" alt="" class="img-fluid">
+                        <a href="template2.php"
+                            class="btn btn-lg btn-primary position-absolute choose-template-btn">Select Template</a>
+                    </div>
+                </div>
+                <div class="templates-item position-relative col-lg-4">
+                    <div class="template-item-img mx-auto ms-lg-0 position-relative">
+                        <img src="images/template3.png" alt="" class="img-fluid">
+                        <a href="template3.php"
+                            class="btn btn-lg btn-primary position-absolute choose-template-btn">Select Template</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <button class="chatbot-toggle" onclick="toggleChatbot()">💬</button>
+    <div class="container111">
+        <div class="chat-header">
+            <div class="logo-chat">
+                <img src="images/bot.png">
+            </div>
+            <div class="title-chat">
+                <p>Any questions?</p>
+            </div>
+        </div>
+        <div class="chat-body"></div>
+        <div class="chat-input">
+            <div class="input-sec">
+                <input type="text" id="textInput" placeholder="Type here" autofocus>
+            </div>
+            <div class="send">
+                <img src="" alt="send">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark">
+        <div class="container">
+            <div class="footer-content text-center">
+                <p class="fs-15">&copy;Copyright 2024. All Rights Reserved - <span>build.resume</span></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<?php
+session_start();
+$databasename="account";
+$database_connection=mysqli_connect("localhost" , "root" , "" , "account");
+
+if (!$database_connection) {
+	echo ("Failed connection to database: $databasename  ---  ". mysqli_connect_error() );
+}
+echo "Successfully connected to database: $databasename";
+session_regenerate_id(true);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to write a CV</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+
+</head>
+<body>
+    
+    <nav class="navbar bg-white" id="navbar">
+        <div class="container">
+            <a href="indexin.php" class="navbar-brand">
+                <img src="images/cv-icon-1725x2048-mk536z84.png" alt="" class="navbar-brand-icon">
+                <span class="navbar-brand-text">build <span>resume.</span></span>
+            </a>
+            <ul class="navigation">
+                <li><a href="templates.php">Templates</a></li>
+                <li><a href="how.php">How to write a CV</a></li>
+                <li><a href="logoutpage.php"><?php echo $_SESSION['username'] ?></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="section-three  bg-bright">
+        <div class="container">
+            <div class="section-three-content">
+                <h3 class="text-uppercase text-blue-dark fs-18 ls-1">How to write a CV and why it is important to have one</h6>
+                <p class="text-dark fs-12 ">A CV is your first chance to promote yourself. A good CV might get you a job interview.
+                    You usually need a CV to apply for a job or to give to an employer you’d like to work for.
+                </p>
+                    
+            </div>
+            <div class="section-three-content">
+                <h3 class="text-blue-dark fs-18 ls-1 text-uppercase">In the following article we will going to present to you how to correctly write a CV</h3>
+                <p class="text-dark fs-12">Creating an effective CV involves presenting a comprehensive summary of your educational background, work experience, skills, and other pertinent information to highlight your qualifications. Begin by listing your personal details at the top, including your full name, address, phone number, email address, and optionally, your LinkedIn profile or professional website.
+
+                    Next, include a professional summary or objective. This section should provide a brief overview of your professional background and career goals. A professional summary consists of a few sentences that capture your experience, key skills, and notable achievements. Alternatively, you can write an objective that states your career aspirations and what you hope to accomplish in the role you’re applying for.
+                    
+                    Following this, detail your work experience in reverse chronological order, starting with your most recent job. For each position, include your job title, the company’s name, location, and dates of employment. Describe your responsibilities and achievements using bullet points, emphasizing your key duties and accomplishments with action verbs and quantifiable results.
+                    
+                    Then, outline your educational background, also in reverse chronological order. Mention the degree you earned, the institution’s name, its location, and your graduation date. You may also include relevant coursework or honors if applicable.
+                    
+                    Include a section on skills, listing those that are particularly relevant to the job you are applying for. This can be divided into technical skills, such as software and tools you are proficient in, and soft skills, like communication, teamwork, and problem-solving abilities.
+                    
+                    Finally, add any professional certifications or licenses you hold. Listing these credentials can strengthen your CV by showcasing additional expertise and qualifications pertinent to your field.
+                    
+                    By following these steps, you can create a comprehensive and compelling CV that effectively presents your qualifications to potential employers.</p>
+            </div>
+            <div class="section-three-content">
+                <h2 class="textul fs-20 ls-1 text-uppercase">Feel free to use our <a href="templates.php">templates</a></h2>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    
+      <section class="contianer12">
+        <div class="card__container swiper">
+          <div class="card__content">
+            <div class="swiper-wrapper">
+              <article class="card_article swiper-slide">
+                <div class="card__image">
+                  <img src="images/avatar-4.png" alt="image" class="card__img">
+                  <div class="card__shadow"></div>
+                </div>
+
+                <div class="card__data">
+                  <h3 class="card__name">Luana Maria</h3>
+                  <p class="card__description">
+                    As the Developer on this website, I want to say that I loved to work on this and I hope that I can launch a more optimized one in the future. 
+                  </p>
+                </div>
+              </article>
+              <article class="card_article swiper-slide">
+                <div class="card__image">
+                  <img src="images/avatar-3.png" alt="image" class="card__img">
+                  <div class="card__shadow"></div>
+                </div>
+
+                <div class="card__data">
+                  <h3 class="card__name">Karina Ioana</h3>
+                  <p class="card__description">
+                   I am a student and I was looking for a resume for my English project. I love that this platform is free and I can make as many CVs as I want.
+                  </p>
+                </div>
+              </article>
+              <article class="card_article swiper-slide">
+                <div class="card__image">
+                  <img src="images/avatar-2.png" alt="image" class="card__img">
+                  <div class="card__shadow"></div>
+                </div>
+
+                <div class="card__data">
+                  <h3 class="card__name">Stefan Vasile</h3>
+                  <p class="card__description">
+                   As a Software Developer recruter I love to see a great resume. This platform is so intuitive and so easy to use.
+                  </p>
+                </div>
+              </article>
+              <article class="card_article swiper-slide">
+                <div class="card__image">
+                  <img src="images/avatar-1.png" alt="image" class="card__img">
+                  <div class="card__shadow"></div>
+                </div>
+
+                <div class="card__data">
+                  <h3 class="card__name">Constantin Irinel</h3>
+                  <p class="card__description">
+                    I recommend this site to my new employees! 
+                    I always hire new people who have had their resume done on this website
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          
+          <div class="swiper-button-next">
+            <i class="ri-arrow-right-s-line"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="ri-arrow-left-s-line"></i>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+<script src="js/swiper1.js"></script>
+<script src="js/swiper2.js"></script>
+
+    <footer class="footer bg-dark">
+        <div class="container">
+            <div class="footer-content text-center">
+                <p class="fs-15">&copy;Copyright 2024. All Rights Reserved - <span>build.resume</span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
